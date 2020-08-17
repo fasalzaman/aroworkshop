@@ -1,13 +1,6 @@
----
-sectionid: mongodb
-sectionclass: h2
-title: Deploy MongoDB
-parent-id: lab-ratingapp
----
 
 ### Create mongoDB from template
 
-{% collapsible %}
 Azure Red Hat OpenShift provides a container image and template to make creating a new MongoDB database service easy. The template provides parameter fields to define all the mandatory environment variables (user, password, database name, etc) with predefined defaults including auto-generation of password values. It will also define both a deployment configuration and a service.
 
 There are two templates available:
@@ -33,13 +26,9 @@ oc process openshift//mongodb-persistent \
 
 If you now head back to the web console, you should see a new deployment for mongoDB.
 
-![MongoDB deployment](media/mongodb-overview.png)
-
-{% endcollapsible %}
+![MongoDB deployment](../media/mongodb-overview.png)
 
 ### Verify if the mongoDB pod was created successfully
-
-{% collapsible %}
 
 Run the `oc status` command to view the status of the new application and verify if the deployment of the mongoDB template was successful.
 
@@ -47,13 +36,9 @@ Run the `oc status` command to view the status of the new application and verify
 oc status
 ```
 
-![oc status](media/oc-status-mongodb.png)
-
-{% endcollapsible %}
+![oc status](../media/oc-status-mongodb.png)
 
 ### Retrieve mongoDB service hostname
-
-{% collapsible %}
 
 Find the mongoDB service.
 
@@ -61,15 +46,13 @@ Find the mongoDB service.
 oc get svc mongodb
 ```
 
-![oc get svc](media/oc-get-svc-mongo.png)
+![oc get svc](../media/oc-get-svc-mongo.png)
 
 The service will be accessible at the following DNS name: `mongodb.workshop.svc.cluster.local` which is formed of `[service name].[project name].svc.cluster.local`. This resolves only within the cluster.
 
 You can also retrieve this from the web console. You'll need this hostname to configure the `rating-api`.
 
-![MongoDB service in the Web Console](media/mongo-svc-webconsole.png)
-
-{% endcollapsible %}
+![MongoDB service in the Web Console](../media/mongo-svc-webconsole.png)
 
 > **Resources**
 > * [ARO Documentation - MongoDB](https://docs.openshift.com/aro/using_images/db_images/mongodb.html)
