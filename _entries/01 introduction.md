@@ -179,26 +179,7 @@ Build objects share common characteristics: inputs for a build, the need to comp
 
 See here for more details: [https://docs.openshift.com/container-platform/3.11/architecture/core_concepts/builds_and_image_streams.html](https://docs.openshift.com/container-platform/3.11/architecture/core_concepts/builds_and_image_streams.html)
 
-## Application Overview
 
 Now that you have your environment provisioned and the prerequisites fulfilled, it is time to start working on the labs.
-
-You will be deploying a ratings application on Azure Red Hat OpenShift.
-
-![Application diagram](../media/app-overview.png)
-
-The application consists of 3 components:
-
-| Component                                          | Link                                                               |
-|----------------------------------------------------|--------------------------------------------------------------------|
-| A public facing API `rating-api`                   | [GitHub repo](https://github.com/microsoft/rating-api)             |
-| A public facing web frontend `rating-web`          | [GitHub repo](https://github.com/microsoft/rating-web)             |
-| A MongoDB with pre-loaded data                     | [Data](https://github.com/microsoft/rating-api/raw/master/data.tar.gz)   |
-
-Once you're done, you'll have an experience similar to the below.
-
-![Application](../media/app-overview-1.png)
-![Application](../media/app-overview-2.png)
-![Application](../media/app-overview-3.png)
 
 
