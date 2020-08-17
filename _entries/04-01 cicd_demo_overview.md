@@ -1,11 +1,5 @@
----
-sectionid: lab3-cdcd-demo-overview
-sectionclass: h2
-title: CI/CD Demo Overview
-parent-id: lab-cicd
----
-
-### CI/CD 
+LAB 3 : CI/CD 
+## 3.1 CI/CD Demo Overview 
 
 With Continuous Integration and Continuous Delivery, you can accelerate the development and deliver of your microservices. Azure Red Hat OpenShift provides seamless supports to open source DevOps & CICD tools, like Jenkins, Nexus, GitHub and SonarQube.
 
@@ -26,7 +20,7 @@ Following components will be deployed onto your Azure Red Hat OpenShift cluster.
 
 The following diagram shows the steps included in the deployment pipeline:
 
-![CI/CD Demo Diagram](/media/cicd-pipeline-diagram.png)
+![CI/CD Demo Diagram](../media/cicd-pipeline-diagram.png)
 
 On every pipeline execution, the code goes through the following steps:
 
