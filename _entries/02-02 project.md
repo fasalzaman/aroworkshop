@@ -1,13 +1,27 @@
----
-sectionid: createproject
-sectionclass: h2
-title: Create Project
-parent-id: lab-ratingapp
----
+## Connect to the cluster
+
+You can log into the cluster using the `kubeadmin` user.  
+
+Run the following command to find the password for the `kubeadmin` user.
+
+```azurecli-interactive
+az aro list-credentials \
+  --name <CLUSTERNAME> \
+  --resource-group <RESOURCEGROUPNAME>
+```
+
+The following example output shows the password will be in `kubeadminPassword`.
+
+```json
+{
+  "kubeadminPassword": "<generated password>",
+  "kubeadminUsername": "kubeadmin"
+}
+```
+
+Save these secrets, you are going to use them to connect to the Web Portal
 
 ### Login to the web console
-
-{% collapsible %}
 
 Each Azure Red Hat OpenShift cluster has a public hostname that hosts the OpenShift Web Console.
 
@@ -27,29 +41,23 @@ You should get back something like `console-openshift-console.apps.rt80g8x5.east
 
 After logging in, you should be able to see the Azure Red Hat OpenShift Web Console.
 
-![Azure Red Hat OpenShift Web Console](media/openshift-webconsole.png)
+![Azure Red Hat OpenShift Web Console](../media/openshift-webconsole.png)
 
-{% endcollapsible %}
 
 ### Retrieve the login command and token
-
-{% collapsible %}
 
 > **Note** Make sure you complete the [prerequisites](#prereq) to install the OpenShift CLI on the Azure Cloud Shell.
 
 Once you're logged into the Web Console, click on the username on the top right, then click **Copy login command**.
 
-![Copy login command](media/login-command.png)
+![Copy login command](../media/login-command.png)
 
 Open the [Azure Cloud Shell](https://shell.azure.com) and paste the login command. You should be able to connect to the cluster.
 
-![Login through the cloud shell](media/oc-login-cloudshell.png)
+![Login through the cloud shell](../media/oc-login-cloudshell.png)
 
-{% endcollapsible %}
 
 ### Create a project
-
-{% collapsible %}
 
 A project allows a community of users to organize and manage their content in isolation from other communities.
 
@@ -57,10 +65,7 @@ A project allows a community of users to organize and manage their content in is
 oc new-project workshop
 ```
 
-![Create new project](media/oc-newproject.png)
-
-
-{% endcollapsible %}
+![Create new project](../media/oc-newproject.png)
 
 > **Resources**
 > * [ARO Documentation - Access your services](https://docs.openshift.com/aro/getting_started/access_your_services.html)
