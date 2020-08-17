@@ -29,7 +29,7 @@ spec:
               app: rating-web
 ```
 
-![Create network policy](media/create-networkpolicy.png)
+![Create network policy](../media/create-networkpolicy.png)
 
 Click **Create**.
 
