@@ -1,5 +1,5 @@
 # LAB 1: GO MICROSERVICES
-## Application Overview 
+## 1.1 Application Overview 
 You will be deploying a ratings application on Azure Red Hat OpenShift.
 
 ![Application diagram](../media/app-overview.png)
@@ -18,7 +18,7 @@ Once you're done, you'll have an experience similar to the below.
 ![Application](../media/app-overview-2.png)
 ![Application](../media/app-overview-3.png)
 
-## Connect to the cluster
+## 1.2 Connect to the cluster
 
 You can log into the cluster using the `kubeadmin` user.  
 
@@ -41,7 +41,7 @@ The following example output shows the password will be in `kubeadminPassword`.
 
 Save these secrets, you are going to use them to connect to the Web Portal
 
-### Login to the web console
+## 1.3 Login to the web console
 
 Each Azure Red Hat OpenShift cluster has a public hostname that hosts the OpenShift Web Console.
 
@@ -77,7 +77,7 @@ Open the [Azure Cloud Shell](https://shell.azure.com) and paste the login comman
 ![Login through the cloud shell](../media/oc-login-cloudshell.png)
 
 
-### Create a project
+## 1.4 Create a project
 
 A project allows a community of users to organize and manage their content in isolation from other communities.
 
@@ -92,7 +92,7 @@ oc new-project workshop
 > * [ARO Documentation - Getting started with the CLI](https://docs.openshift.com/aro/cli_reference/get_started_cli.html)
 > * [ARO Documentation - Projects](https://docs.openshift.com/aro/dev_guide/projects.html)
 
-## Deploy MongoDB
+## 1.5 Deploy MongoDB
 ### Create mongoDB from template
 
 Azure Red Hat OpenShift provides a container image and template to make creating a new MongoDB database service easy. The template provides parameter fields to define all the mandatory environment variables (user, password, database name, etc) with predefined defaults including auto-generation of password values. It will also define both a deployment configuration and a service.
@@ -153,7 +153,7 @@ You can also retrieve this from the web console. You'll need this hostname to co
 > * [ARO Documentation - Running MongoDB Commands...](https://docs.openshift.com/aro/using_images/db_images/mongodb.html#running-mongodb-commands-in-containers)
 > * [ARO Documentation - Templates](https://docs.openshift.com/aro/dev_guide/templates.html)
 
-## Deploy Ratings API
+## 1.6 Deploy Ratings API
 The `rating-api` is a NodeJS application that connects to mongoDB to retrieve and rate items. Below are some of the details that you'll need to deploy this.
 
 - `rating-api` on GitHub: <https://github.com/microsoft/rating-api>
@@ -249,7 +249,7 @@ Now, whenever you push a change to your GitHub repository, a new build will auto
 > * [ARO Documentation - Creating Images with S2I](https://docs.openshift.com/aro/creating_images/s2i.html)
 > * [ARO Documentation - Triggering builds](https://docs.openshift.com/aro/dev_guide/builds/triggering_builds.html)
 
-## Deploy Ratings Frontend
+## 1.7 Deploy Ratings Frontend
 
 The `rating-web` is a NodeJS application that connects to the `rating-api`. Below are some of the details that you'll need to deploy this.
 
@@ -369,7 +369,7 @@ Immediately, go to the **Builds** tab in the OpenShift Web Console. You'll see a
 > * [ARO Documentation - Triggering builds](https://docs.openshift.com/aro/dev_guide/builds/triggering_builds.html)
 > * [ARO Documentation - Routes](https://docs.openshift.com/aro/dev_guide/routes.html)
 
-## Create Network Policy
+## 1.8 Create Network Policy
 
 
 Now that you have the application working, it is time to apply some security hardening. You'll use [network policies](https://docs.openshift.com/aro/admin_guide/managing_networking.html#admin-guide-networking-networkpolicy) to restrict communication to the `rating-api`.
