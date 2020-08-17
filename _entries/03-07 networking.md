@@ -1,23 +1,16 @@
----
-sectionid: lab2-network
-sectionclass: h2
-title: Networking and Scaling
-parent-id: lab-clusterapp
----
+## 2.7 Networking and Scaling
 
 In this section we'll see how OSToy uses intra-cluster networking to separate functions by using microservices and visualize the scaling of pods.
 
 Let's review how this application is set up...
 
-![OSToy Diagram](/media/managedlab/4-ostoy-arch.png)
+![OSToy Diagram](../media/managedlab/4-ostoy-arch.png)
 
 As can be seen in the image above we see we have defined at least 2 separate pods, each with its own service.  One is the frontend web application (with a service and a publicly accessible route) and the other is the backend microservice with a service object created so that the frontend pod can communicate with the microservice (across the pods if more than one).  Therefore this microservice is not accessible from outside this cluster, nor from other namespaces/projects (due to ARO's network policy, **ovs-networkpolicy**).  The sole purpose of this microservice is to serve internal web requests and return a JSON object containing the current hostname and a randomly generated color string.  This color string is used to display a box with that color displayed in the tile titled "Intra-cluster Communication".
 
 ### Networking
 
 Click on *Networking* in the left menu. Review the networking configuration.
-
-{% collapsible %}
 
 The right tile titled "Hostname Lookup" illustrates how the service name created for a pod can be used to translate into an internal ClusterIP address. Enter the name of the microservice following the format of `my-svc.my-namespace.svc.cluster.local` which we created in our `ostoy-microservice.yaml` which can be seen here:
 
@@ -42,9 +35,7 @@ In this case we will enter: `ostoy-microservice-svc.ostoy.svc.cluster.local`
 
 We will see an IP address returned.  In our example it is ```172.30.165.246```.  This is the intra-cluster IP address; only accessible from within the cluster.
 
-![ostoy DNS](/media/managedlab/20-ostoy-dns.png)
-
-{% endcollapsible %}
+![ostoy DNS](../media/managedlab/20-ostoy-dns.png)
 
 ### Scaling
 
@@ -87,7 +78,7 @@ Confirm that there are now 3 pods via the CLI (`oc get pods`) or the web UI (*Ov
 
 See this visually by visiting the OSToy app and seeing how many boxes you now see.  It should be three.
 
-![UI Scale](/media/managedlab/22-ostoy-colorspods.png)
+![UI Scale](../media/managedlab/22-ostoy-colorspods.png)
 
 Now we will scale the pods down using the command line.  Execute the following command from the CLI: 
 
@@ -99,8 +90,7 @@ See this visually by visiting the OSToy App and seeing how many boxes you now se
 
 Lastly let's use the web UI to scale back down to one pod.  In the project you created for this app (ie: "ostoy") in the left menu click *Overview > expand "ostoy-microservice"*.  On the right you will see a blue circle with the number 2 in the middle. Click on the down arrow to the right of that to scale the number of pods down to 1.
 
-![UI Scale](/media/managedlab/21-ostoy-uiscale.png)
+![UI Scale](../media/managedlab/21-ostoy-uiscale.png)
 
 See this visually by visiting the OSToy app and seeing how many boxes you now see.  It should be one.  You can also confirm this via the CLI or the web UI
 
-{% endcollapsible %}
