@@ -1,13 +1,9 @@
----
-sectionid: appoverview
-sectionclass: h2
-title: Application Overview
-parent-id: lab-ratingapp
----
+
+Now that you have your environment provisioned and the prerequisites fulfilled, it is time to start working on the labs.
 
 You will be deploying a ratings application on Azure Red Hat OpenShift.
 
-![Application diagram](media/app-overview.png)
+![Application diagram](../media/app-overview.png)
 
 The application consists of 3 components:
 
@@ -19,6 +15,6 @@ The application consists of 3 components:
 
 Once you're done, you'll have an experience similar to the below.
 
-![Application](media/app-overview-1.png)
-![Application](media/app-overview-2.png)
-![Application](media/app-overview-3.png)
+![Application](../media/app-overview-1.png)
+![Application](../media/app-overview-2.png)
+![Application](../media/app-overview-3.png)
