@@ -495,9 +495,3 @@ This will generate some CPU intensive calculations.  (If you are curious about w
 After about a minute the new pods will show up on the page (represented by the colored rectangles). Confirm that the pods did indeed scale up through the OpenShift Web Console or the CLI (you can use the command above).
 
 > **Note:** The page may still lag a bit which is normal.
-
-#### 5. Review resources in Azure Monitor
-
-After confirming that the autoscaler did spin up new pods, revisit Azure Monitor like we did in the logging section.  By clickin on the containers tab we can see the resource consumption of the pods and see that three pods were created to handle the load.
-
-![HPA Metrics](../media/managedlab/34-ostoy-hpametrics.png)
