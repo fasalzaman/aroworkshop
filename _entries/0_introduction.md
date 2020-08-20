@@ -52,7 +52,7 @@ Select **Bash** as your shell.
 
 Select **Show advanced settings**
 
-![Select show advanced settings](media/cloudshell/1-mountstorage-advanced.png)
+![Select show advanced settings](../media/cloudshell/1-mountstorage-advanced.png)
 
 Set the **Storage account** and **File share** names to your resource group name (all lowercase, without any special characters). Leave other settings unchanged, then hit **Create storage**
 
