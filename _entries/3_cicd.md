@@ -102,13 +102,15 @@ From the Azure Red Hat OpenShift web console, you can see the newly created proj
 
 A CI/CD pipeline is created by the demo provision script. Please review the pipeline and trigger an execution.
 
-On OpenShift Web Console, Navigate to project `cicd-aro`. From the side navigation menu, select menu item `Builds`, then `Pipelines`. 
+On OpenShift Web Console, Navigate to project `cicd-aro`. From the side navigation menu, select menu item `Builds`, then select`Build Configs`. 
 
 You will see there is a pipeline, named `tasks-pipeline`. Click on the name of the pipeline, then you will see the pipeline overview page. In the tab `Configuration`, you will see the definition of the pipeline.
 
-![Pipeline Definition](../media/cicd-definition.png)
+![Pipeline Definition](../media/pipe.png)
 
-To run the pipeline, click on button `Start Build`, which is on the top right corner. Then Azure Red Hat OpenShift will start a new execution instance for that pipeline.
+To run the pipeline, click on button `Actions`and select `Start Build` from the dropdown. Then Azure Red Hat OpenShift will start a new execution instance for that pipeline.
+
+![Start Build](../media/startbuild.png)
 
 ### Monitor the pipeline
 
@@ -130,7 +132,12 @@ When the pipeline execution runs to stage 'Promote to STAGE?' You will see the p
 
 ![Approve Pipeline Task]../media/cicd-approve.png)
 
-Click on the link `Input Required` , and you will be navigated to Jenkins. Click button `Promote` in Jenkins to approve the task.
+Click on the link `Input Required` , and you will be navigated to Jenkins. Click `Back to Project` button and the click on the `Promote` buttion in Jenkins to resume the pipeline build.
+
+![Approve Pipeline Task](../media/jenproj.png)<\br>
+
+![promote](../media/promote.png)
+
 
 
 ### Verify the results
