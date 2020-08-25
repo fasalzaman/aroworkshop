@@ -187,7 +187,7 @@ Hit **Save** when done.
 It can also be done with CLI
 
 ```
-oc set env dc/rating-api MONGODB_URI=mongodb://ratingsuser:ratingspassword@mongodb.workshop.svc.cluster.local:27017/ratingsdb
+oc set env deploy/rating-api MONGODB_URI=mongodb://ratingsuser:ratingspassword@mongodb.workshop.svc.cluster.local:27017/ratingsdb
 ```
 
 ### Verify that the service is running
@@ -280,8 +280,7 @@ Create the `API` environment variable for `rating-web` Deployment Config. The va
 Instead of setting the environment variable through the Azure Red Hat OpenShift Web Console, you can set it through the OpenShift CLI.
 
 ```sh
-oc set env dc rating-web API=http://rating-api:8080
-
+oc set env deploy rating-web API=http://rating-api:8080
 ```
 
 ### Expose the `rating-web` service using a Route
