@@ -38,13 +38,13 @@ OSToy is a simple Node.js application that we will deploy to Azure Red Hat OpenS
 7. **Networking:** Tools to illustrate networking within the application.
 8. Shows some more information about the application.
 
-![Home Page](/media/managedlab/10-ostoy-homepage-1.png)
+![Home Page](https://github.com/fasalzaman/aroworkshop/raw/master/media/managedlab/10-ostoy-homepage-1.png)
 
 ### Learn more about the application
 
 To learn more, click on the "About" menu item on the left once we deploy the app.
 
-![ostoy About](/media/managedlab/5-ostoy-about.png)
+![ostoy About](https://github.com/fasalzaman/aroworkshop/raw/master/media/managedlab/5-ostoy-about.png)
 
 ## 2.2 Application Deployment
 
@@ -52,7 +52,7 @@ To learn more, click on the "About" menu item on the left once we deploy the app
 
 If not logged in via the CLI, click on the dropdown arrow next to your name in the top-right and select *Copy Login Command*.
 
-![CLI Login](../media/managedlab/7-ostoy-login.png)
+![CLI Login](https://github.com/fasalzaman/aroworkshop/raw/master/media/managedlab/7-ostoy-login.png)
 
 Then go to your terminal and paste that command and press enter.  You will see a similar confirmation message if you successfully logged in.
 
@@ -90,7 +90,7 @@ to build a new example application in Ruby.
 
 Equivalently you can also create this new project using the web UI by selecting "Application Console" at the top  then clicking on "+Create Project" button on the right.
 
-![UI Create Project](../media/managedlab/6-ostoy-newproj.png)
+![UI Create Project](https://github.com/fasalzaman/aroworkshop/raw/master/media/managedlab/6-ostoy-newproj.png)
 
 
 ### Download YAML configuration
@@ -99,9 +99,9 @@ Download the Kubernetes deployment object yamls from the following locations to 
 
 Feel free to open them up and take a look at what we will be deploying. For simplicity of this lab we have placed all the Kubernetes objects we are deploying in one "all-in-one" yaml file.  Though in reality there are benefits to separating these out into individual yaml files.
 
-[ostoy-fe-deployment.yaml](/yaml/ostoy-fe-deployment.yaml)
+[ostoy-fe-deployment.yaml](https://github.com/fasalzaman/aroworkshop/raw/master/yaml/ostoy-fe-deployment.yaml)
 
-[ostoy-microservice-deployment.yaml](/yaml/ostoy-microservice-deployment.yaml)
+[ostoy-microservice-deployment.yaml](https://github.com/fasalzaman/aroworkshop/raw/master/yaml/ostoy-microservice-deployment.yaml)
 
 ### Deploy backend microservice
 
@@ -163,18 +163,18 @@ ostoy-route   ostoy-route-ostoy.apps.abcd1234.eastus.azmosa.io             ostoy
 
 Copy `ostoy-route-ostoy.apps.abcd1234.eastus.azmosa.io` above and paste it into your browser and press enter.  You should see the homepage of our application.
 
-![Home Page](../media/managedlab/10-ostoy-homepage.png)
+![Home Page](https://github.com/fasalzaman/aroworkshop/raw/master/media/managedlab/10-ostoy-homepage.png)
 
 ## 2.3 Logging and Metrics
 Assuming you can access the application via the Route provided and are still logged into the CLI (please go back to part 2 if you need to do any of those) we'll start to use this application.  As stated earlier, this application will allow you to "push the buttons" of OpenShift and see how it works.  We will do this to test the logs.
 
 Click on the *Home* menu item and then click in the message box for "Log Message (stdout)" and write any message you want to output to the *stdout* stream.  You can try "**All is well!**".  Then click "Send Message".
 
-![Logging stdout](../media/managedlab/8-ostoy-stdout.png)
+![Logging stdout](https://github.com/fasalzaman/aroworkshop/raw/master/media/managedlab/8-ostoy-stdout.png)
 
 Click in the message box for "Log Message (stderr)" and write any message you want to output to the *stderr* stream. You can try "**Oh no! Error!**".  Then click "Send Message".
 
-![Logging stderr](../media/managedlab/9-ostoy-stderr.png)
+![Logging stderr](https://github.com/fasalzaman/aroworkshop/raw/master/media/managedlab/9-ostoy-stderr.png)
 
 ### View logs directly from the pod
 
@@ -205,33 +205,33 @@ In this section we will intentionally crash our pods as well as make a pod non-r
 
 It would be best to prepare by splitting your screen between the OpenShift Web UI and the OSToy application so that you can see the results of our actions immediately.
 
-![Splitscreen](../media/managedlab/23-ostoy-splitscreen.png)
+![Splitscreen](https://github.com/fasalzaman/aroworkshop/raw/master/media/managedlab/23-ostoy-splitscreen.png)
 
 But if your screen is too small or that just won't work, then open the OSToy application in another tab so you can quickly switch to the OpenShift Web Console once you click the button. To get to this deployment in the OpenShift Web Console go to: 
 
 *Applications > Deployments >* click the number in the "Last Version" column for the "ostoy-frontend" row
 
-![Deploy Num](../media/managedlab/11-ostoy-deploynum.png)
+![Deploy Num](https://github.com/fasalzaman/aroworkshop/raw/master/media/managedlab/11-ostoy-deploynum.png)
 
 Go to the OSToy app, click on *Home* in the left menu, and enter a message in the "Crash Pod" tile (ie: "This is goodbye!") and press the "Crash Pod" button.  This will cause the pod to crash and Kubernetes should restart the pod. After you press the button you will see:
 
-![Crash Message](../media/managedlab/12-ostoy-crashmsg.png)
+![Crash Message](https://github.com/fasalzaman/aroworkshop/raw/master/media/managedlab/12-ostoy-crashmsg.png)
 
 Quickly switch to the Deployment screen. You will see that the pod is red, meaning it is down but should quickly come back up and show blue.
 
-![Pod Crash](../media/managedlab/13-ostoy-podcrash.png)
+![Pod Crash](https://github.com/fasalzaman/aroworkshop/raw/master/media/managedlab/13-ostoy-podcrash.png)
 
 You can also check in the pod events and further verify that the container has crashed and been restarted.
 
-![Pod Events](../media/managedlab/14-ostoy-podevents.png)
+![Pod Events](https://github.com/fasalzaman/aroworkshop/raw/master/media/managedlab/14-ostoy-podevents.png)
 
 Keep the page from the pod events still open from the previous step.  Then in the OSToy app click on the "Toggle Health" button, in the "Toggle Health Status" tile.  You will see the "Current Health" switch to "I'm not feeling all that well".
 
-![Pod Events](../media/managedlab/15-ostoy-togglehealth.png)
+![Pod Events](https://github.com/fasalzaman/aroworkshop/raw/master/media/managedlab/15-ostoy-togglehealth.png)
 
 This will cause the app to stop responding with a "200 HTTP code". After 3 such consecutive failures ("A"), Kubernetes will kill the pod ("B") and restart it ("C"). Quickly switch back to the pod events tab and you will see that the liveness probe failed and the pod as being restarted.
 
-![Pod Events2](../media/managedlab/16-ostoy-podevents2.png)
+![Pod Events2](https://github.com/fasalzaman/aroworkshop/raw/master/media/managedlab/16-ostoy-podevents2.png)
 
 ## 2.5 Persistent Storage
 In this section we will execute a simple example of using persistent storage by creating a file that will be stored on a persistent volume in our cluster and then confirm that it will "persist" across pod failures and recreation.
@@ -244,11 +244,11 @@ In the OSToy app click on *Persistent Storage* in the left menu.  In the "Filena
 
 Underneath that, in the "File Contents" box, enter text to be stored in the file. (ie: "Azure Red Hat OpenShift is the greatest thing since sliced bread!" or "test" :) ).  Then click "Create file".
 
-![Create File](../media/managedlab/17-ostoy-createfile.png)
+![Create File](https://github.com/fasalzaman/aroworkshop/raw/master/media/managedlab/17-ostoy-createfile.png)
 
 You will then see the file you created appear above under "Existing files".  Click on the file and you will see the filename and the contents you entered.
 
-![View File](../media/managedlab/18-ostoy-viewfile.png)
+![View File](https://github.com/fasalzaman/aroworkshop/raw/master/media/managedlab/18-ostoy-viewfile.png)
 
 We now want to kill the pod and ensure that the new pod that spins up will be able to see the file we created. Exactly like we did in the previous section. Click on *Home* in the left menu.
 
@@ -258,7 +258,7 @@ Click on *Persistent Storage* in the left menu
 
 You will see the file you created is still there and you can open it to view its contents to confirm.
 
-![Crash Message](../media/managedlab/19-ostoy-existingfile.png)
+![Crash Message](https://github.com/fasalzaman/aroworkshop/raw/master/media/managedlab/19-ostoy-existingfile.png)
 
 Now let's confirm that it's actually there by using the CLI and checking if it is available to the container.  If you remember we mounted the directory `/var/demo_files` to our PVC.  So get the name of your frontend pod
 
@@ -365,7 +365,7 @@ In this section we'll see how OSToy uses intra-cluster networking to separate fu
 
 Let's review how this application is set up...
 
-![OSToy Diagram](../media/managedlab/4-ostoy-arch.png)
+![OSToy Diagram](https://github.com/fasalzaman/aroworkshop/raw/master/media/managedlab/4-ostoy-arch.png)
 
 As can be seen in the image above we see we have defined at least 2 separate pods, each with its own service.  One is the frontend web application (with a service and a publicly accessible route) and the other is the backend microservice with a service object created so that the frontend pod can communicate with the microservice (across the pods if more than one).  Therefore this microservice is not accessible from outside this cluster, nor from other namespaces/projects (due to ARO's network policy, **ovs-networkpolicy**).  The sole purpose of this microservice is to serve internal web requests and return a JSON object containing the current hostname and a randomly generated color string.  This color string is used to display a box with that color displayed in the tile titled "Intra-cluster Communication".
 
@@ -396,7 +396,7 @@ In this case we will enter: `ostoy-microservice-svc.ostoy.svc.cluster.local`
 
 We will see an IP address returned.  In our example it is ```172.30.165.246```.  This is the intra-cluster IP address; only accessible from within the cluster.
 
-![ostoy DNS](../media/managedlab/20-ostoy-dns.png)
+![ostoy DNS](https://github.com/fasalzaman/aroworkshop/raw/master/media/managedlab/20-ostoy-dns.png)
 
 ### Scaling
 
@@ -437,7 +437,7 @@ Confirm that there are now 3 pods via the CLI (`oc get pods`) or the web UI (*Ov
 
 See this visually by visiting the OSToy app and seeing how many boxes you now see.  It should be three.
 
-![UI Scale](../media/managedlab/22-ostoy-colorspods.png)
+![UI Scale](https://github.com/fasalzaman/aroworkshop/raw/master/media/managedlab/22-ostoy-colorspods.png)
 
 Now we will scale the pods down using the command line.  Execute the following command from the CLI: 
 
@@ -449,7 +449,7 @@ See this visually by visiting the OSToy App and seeing how many boxes you now se
 
 Lastly let's use the web UI to scale back down to one pod.  In the project you created for this app (ie: "ostoy") in the left menu click *Overview > expand "ostoy-microservice"*.  On the right you will see a blue circle with the number 2 in the middle. Click on the down arrow to the right of that to scale the number of pods down to 1.
 
-![UI Scale](../media/managedlab/21-ostoy-uiscale.png)
+![UI Scale](https://github.com/fasalzaman/aroworkshop/raw/master/media/managedlab/21-ostoy-uiscale.png)
 
 See this visually by visiting the OSToy app and seeing how many boxes you now see.  It should be one.  You can also confirm this via the CLI or the web UI
 
@@ -473,14 +473,14 @@ Run the following command to create the autoscaler. This will create an HPA that
 
 In the OSToy app in the left menu click on "Autoscaling" to access this portion of the workshop.  
 
-![HPA Menu](../media/managedlab/32-hpa-menu.png)
+![HPA Menu](https://github.com/fasalzaman/aroworkshop/raw/master/media/managedlab/32-hpa-menu.png)
 
 As was in the networking section you will see the total number of pods available for the microservice by counting the number of colored boxes.  In this case we have only one.  This can be verified through the web UI or from the CLI.
 
 You can use the following command to see the running microservice pods only:
 `oc get pods --field-selector=status.phase=Running | grep microservice`
 
-![HPA Main](../media/managedlab/33-hpa-mainpage.png)
+![HPA Main](https://github.com/fasalzaman/aroworkshop/raw/master/media/managedlab/33-hpa-mainpage.png)
 
 #### 3. Increase the load
 
