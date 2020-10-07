@@ -57,7 +57,7 @@ Retrieve your cluster specific hostname. Replace `<cluster name>` and `<resource
 az aro show -n <cluster name> -g <resource group> --query "consoleProfile" -o tsv
 ```
 
-You should get back something like `console-openshift-console.apps.rt80g8x5.eastus.aroapp.io`. Add `https://` to the beginning of that hostname and open that link in your browser. You'll be asked to login with Azure Active Directory. Use the username and password provided to you in the lab.
+You should get back something like `console-openshift-console.apps.rt80g8x5.eastus.aroapp.io`. Add `https://` to the beginning of that hostname and open that link in your browser. You'll be asked to login with Azure Active Directory. Use the Kubeadmin username and password to login.
 
 After logging in, you should be able to see the Azure Red Hat OpenShift Web Console.
 
